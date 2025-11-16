@@ -1,10 +1,10 @@
 name: Build Kernel
 
 env:
-  TZ: Asia/Shanghai
+  TZ: Asia/Seoul
   ANDROID_VERSION: 'android12'
   KERNEL_VERSION: '5.10'
-  KERNEL_NAME: 'localhost-Hutao'
+  KERNEL_NAME: 'Yoro'
 
 on:
   workflow_dispatch:
