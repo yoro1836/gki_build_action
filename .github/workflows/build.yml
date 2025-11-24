@@ -161,15 +161,11 @@ jobs:
           fi
           git clone https://github.com/ShirkNeko/SukiSU_patch.git
           
-          if [[ "${{ env.SUSFS }}" == "true" ]]; then
+          if [[ "${{ env.SUSFS }}" == "true" && "${{ env.KERNELSU }}" != "xxksu" ]]; then
             git clone https://gitlab.com/simonpunk/susfs4ksu.git -b gki-${{ env.ANDROID_VERSION }}-${{ env.KERNEL_VERSION }}
             cp ./susfs4ksu/kernel_patches/50_add_susfs_in_gki-android12-5.10.patch ./common/
             cp ./susfs4ksu/kernel_patches/fs/* ./common/fs/
             cp ./susfs4ksu/kernel_patches/include/linux/* ./common/include/linux/
-            
-            if [[ "${{ env.KERNELSU }}" == "xxksu" ]]; then
-                cp ./susfs4ksu/kernel_patches/KernelSU/10_enable_susfs_for_ksu.patch ./KernelSU/
-            fi
           else
             cp ./SukiSU_patch/hooks/scope_min_manual_hooks_v1.6.patch ./common/
           fi
@@ -179,12 +175,7 @@ jobs:
           
           cd ./common
           
-          if [[ "${{ env.SUSFS }}" == "true" ]]; then
-            if [[ "${{ env.KERNELSU }}" == "xxksu" ]]; then
-              cd ../KernelSU
-              patch -p1 < 10_enable_susfs_for_ksu.patch || true
-              cd ../common
-            fi
+          if [[ "${{ env.SUSFS }}" == "true" && "${{ env.KERNELSU }}" != "xxksu" ]]; then
             patch -p1 --fuzz=3 < 50_add_susfs_in_gki-android12-5.10.patch || true
           else
             patch -p1 < scope_min_manual_hooks_v1.6.patch || true
