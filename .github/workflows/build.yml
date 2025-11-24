@@ -103,7 +103,7 @@ jobs:
           elif [[ "${{ env.KERNEL }}" == "zero" ]]; then
             aria2c -s16 -x16 -k1M https://github.com/yoro1836/zero_kernel/archive/refs/heads/zero.zip -o common.zip && 
             unzip -q common.zip && 
-            mv "zero_kernel" common &&
+            mv "zero_kernel-zero" common &&
             rm -rf common.zip &
           fi
           
