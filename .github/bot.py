@@ -5,8 +5,8 @@ from telethon.tl.types import InputReplyToMessage
 import os
 import sys
 
-API_ID = 611335
-API_HASH = "d524b414d21f4d37f08684c1df41ac9c"
+API_ID = 20216401
+API_HASH = "a8b4f55daef2cdae4e5b3e9b5b7f947e"
 
 BETTER_NET = os.environ.get("BETTER_NET")
 REKERNEL = os.environ.get("REKERNEL")
