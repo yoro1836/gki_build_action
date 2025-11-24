@@ -1,0 +1,13 @@
+{
+  "kernel": "zero",
+  "kernelsu": "xxksu",
+  "better_net": "true",
+  "zram": "true",
+  "rekernel_enable": "true",
+  "susfs": "true",
+  "ssg": "true",
+  "lxc_enable": "true",
+  "stock_config": "false",
+  "baseband_guard": "true",
+  "key": "ak3-5.10_zero_xxksu_susfs"
+}
