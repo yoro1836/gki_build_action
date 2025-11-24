@@ -181,9 +181,9 @@ jobs:
           
           if [[ "${{ env.SUSFS }}" == "true" ]]; then
             if [[ "${{ env.KERNELSU }}" == "xxksu" ]]; then
-              cd ./KernelSU
+              cd ../KernelSU
               patch -p1 < 10_enable_susfs_for_ksu.patch || true
-              cd -
+              cd ../common
             fi
             patch -p1 --fuzz=3 < 50_add_susfs_in_gki-android12-5.10.patch || true
           else
