@@ -8,6 +8,6 @@
   "ssg": "true",
   "lxc_enable": "false",
   "stock_config": "false",
-  "baseband_guard": "true",
+  "baseband_guard": "false",
   "key": "ak3-5.10_zero_rksu_susfs"
 }
