@@ -1,10 +1,10 @@
 name: Build Kernel
 
 env:
-  TZ: Asia/Shanghai
+  TZ: Asia/Seoul
   ANDROID_VERSION: 'android12'
   KERNEL_VERSION: '5.10'
-  KERNEL_NAME: 'localhost-Hutao'
+  KERNEL_NAME: 'Zero'
 
 on:
   workflow_dispatch:
@@ -99,6 +99,11 @@ jobs:
             aria2c -s16 -x16 -k1M https://github.com/Tools-cx-app/android_gki_kernel_5.10_common/archive/refs/heads/android12-5.10-2025-09.zip -o common.zip && 
             unzip -q common.zip && 
             mv "android_gki_kernel_5.10_common-android12-5.10-2025-09" common &&
+            rm -rf common.zip &
+          elif [[ "${{ env.KERNEL }}" == "zero" ]]; then
+            aria2c -s16 -x16 -k1M https://github.com/yoro1836/zero_kernel/archive/refs/heads/zero.zip -o common.zip && 
+            unzip -q common.zip && 
+            mv "zero" common &&
             rm -rf common.zip &
           fi
           
