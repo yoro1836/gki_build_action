@@ -141,7 +141,7 @@ jobs:
             elif [[ "${{ env.KERNELSU }}" == "sukisu" ]]; then
               curl -LSs "https://github.com/SukiSU-Ultra/SukiSU-Ultra/raw/main/kernel/setup.sh" | bash -s susfs-main
             elif [[ "${{ env.KERNELSU }}" == "xxksu" ]]; then
-              curl -LSs "https://github.com/backslashxx/KernelSU/raw/master/kernel/setup.sh" | bash -s main
+              curl -LSs "https://github.com/backslashxx/KernelSU/raw/master/kernel/setup.sh" | bash -s master
             fi
           else
             if [[ "${{ env.KERNELSU }}" == "rksu" ]]; then
@@ -149,7 +149,7 @@ jobs:
             elif [[ "${{ env.KERNELSU }}" == "sukisu" ]]; then
               curl -LSs "https://github.com/SukiSU-Ultra/SukiSU-Ultra/raw/main/kernel/setup.sh" | bash -s main
             elif [[ "${{ env.KERNELSU }}" == "xxksu" ]]; then
-              curl -LSs "https://github.com/backslashxx/KernelSU/raw/master/kernel/setup.sh" | bash -s main
+              curl -LSs "https://github.com/backslashxx/KernelSU/raw/master/kernel/setup.sh" | bash -s master
             fi
           fi
 
